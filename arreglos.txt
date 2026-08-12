@@ -1,76 +1,8 @@
-Agregar:
-    Auto:
-        Marca y Modelo
-        Uso particular o comercial
+Seguro de vida y sepelio
+Marca y modelo en el mismo de la bici y año de la bici por separado
+Compañias que nos respaldan (En todos):
+    contacto/documentacion:
+En el chatBot:
+    Volver a poner la parte de las webs y organizarlo un poco mas
 
-    Moto.
-        Marca y Modelo
-        Uso particular y comercial
-
-    Hogar:
-        Tipo de construcción:
-            Estructura de acero (Steel Frame)
-            Casas prefabricadas o modulares
-
-    Asistencia al viajero:
-        Origen del viaje
-
-    Accidentes personales:
-        CUIL
-        Domicilio
-        Codigo Postal
-        Fecha Nacimiento
-        Correo
-        Telefono
-        Nombre y Apellido
-
-    Modificar:
-        CUIL en todos los campos menos en "Integral de comercios"
-
-    Biciletas:
-        Marca
-        Modelo
-        Rodado
-        Valor de la Bici
-
-
-Compañías que nos respaldan: (Tambien actualizarlo en el chatBot)
-    Agregarle el numero de cada grua a su respectiva aseguradora (En la ventana emergente)
-    Agregarle los links para su aplicacion de la respectiva aseguradora
-            FP: https://online.fedpat.com.ar/autogestion/ui#/login
-            web: https://www.fedpat.com.ar
-            Numero de wsp para documentacion: +54 9 221-429-0200
-            Gruas: +54 9 3512 00-2585 (no llamadas solo wsp) | 0800 222-0022
-
-            CooperacionSeguros: Online: https://asegurados.cooperacionseguros.com.ar | PlayStore: https://play.google.com/store/apps/details?id=com.mustmobile.cooperacionseguros | AppStore: https://apps.apple.com/ar/app/aol-cooperación-seguros/id1059729411
-            web: https://www.cooperacionseguros.com.ar
-            Numero de wsp para documentacion: +54 9 3462 40-6240
-            Gruas: 0800-444-0266 | 3462-437-800
-
-            Galicia: Online: https://appgw.galiciaseguros.com.ar/gs-selfmanagement-fe/auth/login/ | PlayStore: https://play.google.com/store/apps/details?id=com.sura&hl=en_US | AppStore: https://apps.apple.com/ar/app/galicia-seguros/id1315068644
-            web: https://www.galiciaseguros.com.ar
-            Numero de wsp para documentacion: +54 9 11 3254-8281
-            Gruas: 0800-999-76925
-
-            Mercantil Andina: Online: https://asegurados.mercantilandina.com.ar/#/login?returnUrl=%2F | PlayStore: https://play.google.com/store/apps/details?id=com.ma.movil&hl=es_419 | AppStore: https://apps.apple.com/ar/app/ma-móvil/id1055740055
-            web: https://mercantilandina.com.ar
-            Gruas:  0800-777-2634 / 011 4335-5792 | Paises limitrofes: +54 011 4335-5792 
-
-            Rivadavia: Online: https://autogestion.segurosrivadavia.com | PlayStore: https://play.google.com/store/apps/details?id=com.rivadavia.asegurados_rivadavia | AppStore: https://apps.apple.com/ar/app/rivadavia-seguros/id6469643651
-            web: https://www.segurosrivadavia.com
-            Nmero de wsp: +54 9 11 3989-8000
-            Gruas: 0800-666-6789 / 0800-888-2266 | +54 9 11 2808-0012 (no llamadas solo wsp) | Paises limitrofes: +54 351 485-8321 / +54 11 4129-8100
-
-            Triunfo: Online: https://zonaclientes.triunfonet.com.ar | PlayStore: https://play.google.com/store/apps/details?id=com.apptriunfo | AppStore: https://play.google.com/store/apps/details?id=com.apptriunfo
-            web: https://triunfoseguros.com
-            Numero: 0800-666-8400 | 0810-333-3838
-            Gruas: 0810-333-0302
-
-            Woranz: Online: https://asegurados.woranz.com 
-            web: https://www.woranz.com
-            Numero: 0800 266 4240 
-
-            SanCristobal:
-            web: https://www.sancristobalretiro.com.ar
-            Numero: 0341 420 7600 / 0341 420 7673 | +54 9 11 3511-6941
-
+Dejar todo 100% responsive

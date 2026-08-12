@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Lógica de Modales de Compañías (Links de Apps y Grúas Actualizados)
+    // 2. Lógica de Modales de Compañías (Info Real Actualizada con Documentación)
     const companyData = {
         'federacion': { 
             nombre: 'Federación Patronal', 
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             appText: 'Portal Autogestión',
             appLink: 'https://online.fedpat.com.ar/autogestion/ui#/login',
             wspDoc: '+54 9 221-429-0200',
-            gruas: '+54 9 3512 00-2585 (solo WhatsApp) | 0800 222-0022'
+            gruas: '+54 9 3512 00-2585 (solo WA) | 0800 222-0022'
         },
         'cooperacion': { 
             nombre: 'Cooperación Seguros', 
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             playStore: 'https://play.google.com/store/apps/details?id=com.rivadavia.asegurados_rivadavia',
             appStore: 'https://apps.apple.com/ar/app/rivadavia-seguros/id6469643651',
             wspDoc: '+54 9 11 3989-8000',
-            gruas: '0800-666-6789 / 0800-888-2266 | +54 9 11 2808-0012 (solo WhatsApp) | Países limítrofes: +54 351 485-8321 / +54 11 4129-8100'
+            gruas: '0800-666-6789 / 0800-888-2266 | +54 9 11 2808-0012 (solo WA) | Países limítrofes: +54 351 485-8321 / +54 11 4129-8100'
         },
         'woranz': { 
             nombre: 'Woranz', 
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             appLink: 'https://asegurados.mercantilandina.com.ar/#/login?returnUrl=%2F',
             playStore: 'https://play.google.com/store/apps/details?id=com.ma.movil&hl=es_419',
             appStore: 'https://apps.apple.com/ar/app/ma-móvil/id1055740055',
-            wspDoc: '',
+            wspDoc: '0800-888-4488',
             gruas: '0800-777-2634 / 011 4335-5792 | Países limítrofes: +54 011 4335-5792'
         },
         'sancristobal': { 
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${data.appLink ? `<p><strong>📱 App / Autogestión:</strong> <a href="${data.appLink}" target="_blank">${data.appText}</a></p>` : ''}
                         ${data.playStore ? `<p><strong>▶️ Google Play:</strong> <a href="${data.playStore}" target="_blank">Descargar Android</a></p>` : ''}
                         ${data.appStore ? `<p><strong>🍎 App Store:</strong> <a href="${data.appStore}" target="_blank">Descargar iOS</a></p>` : ''}
-                        ${data.wspDoc ? `<p><strong>📞 Contacto / Docs:</strong> ${data.wspDoc}</p>` : ''}
+                        ${data.wspDoc ? `<p><strong>📄 Contacto / Documentación:</strong> ${data.wspDoc}</p>` : ''}
                         ${data.gruas ? `<p><strong>🚨 Grúas / Asistencia:</strong> ${data.gruas}</p>` : ''}
                     </div>
                 `;
@@ -283,8 +283,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <input type="text" name="domicilio_comercio" placeholder="Domicilio del Comercio" class="full-width" required>
         `,
         'bicicleta': baseFields + `
-            <input type="text" name="marca" placeholder="Marca" required>
-            <input type="text" name="modelo" placeholder="Modelo" required>
+            <input type="text" name="marca_y_modelo" placeholder="Marca y Modelo" class="full-width" required>
+            <input type="number" name="anio_bicicleta" placeholder="Año de la Bici" required>
             <input type="text" name="rodado" placeholder="Rodado" required>
             <input type="number" name="valor_bicicleta" placeholder="Valor de la Bici ($)" required>
             <input type="text" name="ubicacion_riesgo" placeholder="Ubicación de Riesgo (Ciudad/Provincia)" class="full-width" required>
@@ -349,8 +349,6 @@ document.addEventListener('DOMContentLoaded', () => {
             inputTipoSeguro.value = seguro.toUpperCase();
             dynamicFields.innerHTML = formSchemas[seguro] || `<input type="text" name="detalles_riesgo" placeholder="Describa el riesgo" class="full-width" required>`;
             modalCotizacion.style.display = 'flex';
-            // === NUEVO: aplica el estado de los inputs de archivo según el
-            // método de envío que ya esté seleccionado (por defecto WhatsApp) ===
             applyFileInputsState();
         });
     });
@@ -363,10 +361,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === modalCompany) modalCompany.style.display = 'none';
     });
 
-    // === NUEVO: Cloudflare R2 (subida de archivos) solo se usa para el
-    // método "email". Si el cliente elige WhatsApp, los inputs de archivo
-    // se deshabilitan y en su lugar se arma un recordatorio de texto con
-    // qué adjuntar manualmente en el chat. ===
     const metodoEnvioRadios = form ? form.querySelectorAll('input[name="metodo_envio"]') : [];
     const metodoEnvioNote = document.getElementById('metodoEnvioNote');
 
@@ -379,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         dynamicFields.querySelectorAll('input[type="file"]').forEach(input => {
             input.disabled = esWhatsapp;
-            if (esWhatsapp) input.value = ''; // limpia cualquier archivo ya elegido
+            if (esWhatsapp) input.value = ''; 
         });
 
         if (metodoEnvioNote) {
@@ -388,9 +382,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Recorre los inputs de archivo del formulario actual y arma una lista
-    // de nombres "amigables" (a partir del <label> que los acompaña) para
-    // recordarle al cliente qué adjuntar manualmente en WhatsApp.
     function getFileReminders() {
         const reminders = [];
         dynamicFields.querySelectorAll('input[type="file"]').forEach(input => {
@@ -406,7 +397,6 @@ document.addEventListener('DOMContentLoaded', () => {
         radio.addEventListener('change', applyFileInputsState);
     });
 
-    // === NUEVO: sube un archivo directo a R2 usando una URL firmada ===
     async function uploadFileToR2(file) {
         const signRes = await fetch(UPLOAD_ENDPOINT, {
             method: 'POST',
@@ -437,7 +427,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return downloadUrl;
     }
 
-    // 4. Interceptor de Envío y Procesamiento (EmailJS DUAL-FORMAT + WhatsApp)
+    // 4. Interceptor de Envío y Procesamiento
     const btnSubmit = document.getElementById('btnSubmit');
     const formStatus = document.getElementById('formStatus');
 
@@ -452,9 +442,7 @@ document.addEventListener('DOMContentLoaded', () => {
             formStatus.style.color = '#475569';
 
             const tipoSeguro = originalFormData.get('tipo_seguro');
-
-            // === NUEVO: Cloudflare R2 solo se usa si el método es email.
-            const fileLinks = []; // { label, fileName, url } — solo se llena en email
+            const fileLinks = []; 
 
             if (metodoEnvio === 'email') {
                 const fileEntries = [];
@@ -480,7 +468,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         formStatus.style.color = '#ef4444';
                         btnSubmit.textContent = 'Generar Cotización';
                         btnSubmit.disabled = false;
-                        return; // aborta el envío completo
+                        return; 
                     }
                 }
             }
@@ -488,7 +476,6 @@ document.addEventListener('DOMContentLoaded', () => {
             btnSubmit.textContent = 'Enviando datos...';
             formStatus.textContent = '';
 
-            // Separación de formatos: Uno para WhatsApp (Plano) y otro para Correo (HTML)
             let waText = `Cotización solicitada para seguro de *${tipoSeguro}*.\n\n--- DATOS DEL CLIENTE ---\n`;
             let emailHtmlRows = ``;
             const hasFiles = fileLinks.length > 0;
@@ -598,7 +585,7 @@ Compañía de Seguro Tercero:
 Daños causados al tercero: 
 *(Adjuntaré foto carnet del tercero si tengo)*`;
 
-    // Actualizado con los nuevos números de Grúas y Asistencia
+    // Chatbot organizado visualmente y con los links limpios
     const chatTree = {
         inicio: {
             text: "¡Hola! 👋 Soy el asistente automatizado de <b>Ezequiel Baños</b>.<br>Seleccioná la gestión a realizar:",
@@ -617,15 +604,15 @@ Daños causados al tercero:
             ]
         },
         solicitar_grua: {
-            text: "📲 <b>Descargá la app de tu compañía para gestionar tu documentación y servicios de forma rápida.</b><br><br>📞 <b>Teléfonos directos de Asistencia/Grúa:</b><br><br>" +
-                  "• <b>Fed. Patronal:</b> +54 9 3512 00-2585 (solo WA) | 0800 222-0022<br>" +
-                  "• <b>Cooperación:</b> 0800-444-0266 | 3462-437-800<br>" +
-                  "• <b>Galicia:</b> 0800-999-76925<br>" +
-                  "• <b>Mercantil Andina:</b> 0800-777-2634 | 011 4335-5792<br>" +
-                  "• <b>Rivadavia:</b> 0800-666-6789 | 0800-888-2266 | +54 9 11 2808-0012 (solo WA)<br>" +
-                  "• <b>Triunfo:</b> 0810-333-0302<br>" +
-                  "• <b>Woranz:</b> 0800-266-4240<br>" +
-                  "• <b>San Cristóbal:</b> 0341 420 7600 | +54 9 11 3511-6941",
+            text: "📲 <b>Descargá la app de tu compañía para gestionar tu documentación y servicios de forma rápida.</b><br><br>📞 <b>Teléfonos directos de Asistencia/Grúa y Web:</b><br><br>" +
+                  "• <b>Fed. Patronal:</b> <a href='https://www.fedpat.com.ar' target='_blank'>Web</a><br>🚨 Grúa: +54 9 3512 00-2585 (WA) / 0800 222-0022<br><br>" +
+                  "• <b>Cooperación:</b> <a href='https://www.cooperacionseguros.com.ar' target='_blank'>Web</a><br>🚨 Grúa: 0800-444-0266 / 3462-437-800<br><br>" +
+                  "• <b>Galicia:</b> <a href='https://www.galiciaseguros.com.ar' target='_blank'>Web</a><br>🚨 Grúa: 0800-999-76925<br><br>" +
+                  "• <b>Mercantil Andina:</b> <a href='https://mercantilandina.com.ar' target='_blank'>Web</a><br>🚨 Grúa: 0800-777-2634 / 011 4335-5792<br><br>" +
+                  "• <b>Rivadavia:</b> <a href='https://www.segurosrivadavia.com' target='_blank'>Web</a><br>🚨 Grúa: 0800-666-6789 / +54 9 11 2808-0012 (WA)<br><br>" +
+                  "• <b>Triunfo:</b> <a href='https://triunfoseguros.com' target='_blank'>Web</a><br>🚨 Grúa: 0810-333-0302<br><br>" +
+                  "• <b>Woranz:</b> <a href='https://www.woranz.com' target='_blank'>Web</a><br>📞 Contacto: 0800-266-4240<br><br>" +
+                  "• <b>San Cristóbal:</b> <a href='https://www.sancristobalretiro.com.ar' target='_blank'>Web</a><br>📞 Contacto: 0341 420 7600",
             options: [
                 { label: "⬅️ Entendido, volver al menú", next: "inicio" }
             ]

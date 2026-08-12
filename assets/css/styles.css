@@ -166,8 +166,7 @@ html { scroll-behavior: smooth; }
 #formCotizacion input[type="file"] { padding: 9px 16px; background-color: var(--white); font-size: 0.85rem; color: var(--text-muted); }
 #formCotizacion input:focus, #formCotizacion select:focus, #formCotizacion textarea:focus { outline: none; border-color: var(--primary-blue); background-color: var(--white); box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.15); }
 
-/* === NUEVO: estado visual cuando un input de archivo se deshabilita
-   (al elegir WhatsApp como método de envío) === */
+/* === NUEVO: estado visual cuando un input de archivo se deshabilita === */
 #formCotizacion input[type="file"]:disabled {
     background-color: #e2e8f0;
     color: #94a3b8;
@@ -192,6 +191,8 @@ html { scroll-behavior: smooth; }
 .company-desc { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 15px; }
 .company-contact { margin-top: 15px; padding: 15px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 0.9rem;}
 .company-contact a { color: var(--primary-blue); font-weight: 600; text-decoration: none;}
+.company-contact p { margin-bottom: 6px; }
+.company-contact p:last-child { margin-bottom: 0; }
 
 /* =========================================
    9. Chatbot Rediseñado
@@ -205,7 +206,7 @@ html { scroll-behavior: smooth; }
 .chatbot-title { font-family: var(--font-headings); font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 10px; }
 .status-dot { width: 9px; height: 9px; background-color: var(--accent-mint); border-radius: 50%; box-shadow: 0 0 8px var(--accent-mint); }
 .chatbot-close { background: none; border: none; color: var(--white); font-size: 1.6rem; cursor: pointer; }
-.chatbot-body { height: 420px; overflow-y: auto; padding: 22px; background-color: #f8fafc; display: flex; flex-direction: column; gap: 16px; }
+.chatbot-body { height: 60vh; max-height: 420px; overflow-y: auto; padding: 22px; background-color: #f8fafc; display: flex; flex-direction: column; gap: 16px; }
 .msg-bot, .msg-user { max-width: 88%; padding: 12px 16px; border-radius: 14px; font-size: 0.9rem; line-height: 1.45; animation: fadeIn 0.25s ease-out; word-wrap: break-word;}
 @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 .msg-bot { background-color: var(--white); color: var(--text-dark); align-self: flex-start; border-bottom-left-radius: 3px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; }
@@ -248,7 +249,7 @@ html { scroll-behavior: smooth; }
     .logo-bold { font-size: 1.05rem; }
     .logo-sub { font-size: 0.65rem; }
     .chatbot-window { bottom: 0; right: 0; width: 100vw; max-width: 100vw; height: 100vh; border-radius: 0; }
-    .chatbot-body { height: calc(100vh - 120px); }
+    .chatbot-body { height: calc(100vh - 120px); max-height: none; }
     .ssn-badge-top { font-size: 0.7rem; padding: 6px 12px; width: 90%; justify-content: center; }
     
     /* En móviles ajustamos a 2 logos por fila */
