@@ -33,16 +33,98 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Lógica de Modales de Compañías (Info Real Actualizada)
+    // 2. Lógica de Modales de Compañías (Links de Apps y Grúas Actualizados)
     const companyData = {
-        'federacion': { nombre: 'Federación Patronal', img: 'assets/img/federacion-patronal.png', desc: 'La aseguradora N°1 en situación financiera del país, ofreciendo solidez y una amplia gama de coberturas patrimoniales.', web: 'https://www.fedpat.com.ar', tel: '0810-222-5588' },
-        'cooperacion': { nombre: 'Cooperación Seguros', img: 'assets/img/cooperacion-seguros.png', desc: 'Especialistas en seguros patrimoniales con una fuerte presencia y atención personalizada inigualable.', web: 'https://www.cooperacionseguros.com.ar', tel: '0800-777-7070' },
-        'triunfo': { nombre: 'Triunfo Seguros', img: 'assets/img/triunfo-seguro.png', desc: 'Compañía destacada por sus precios competitivos y emisión digital inmediata en multiple riesgos.', web: 'https://www.triunfoseguros.com', tel: '0810-666-0302' },
-        'rivadavia': { nombre: 'Seguros Rivadavia', img: 'assets/img/seguro-rivadavia.png', desc: 'Una de las aseguradoras con mayor respaldo y trayectoria del país, enfocada en la protección patrimonial integral.', web: 'https://www.segurosrivadavia.com', tel: '0800-666-6789' },
-        'woranz': { nombre: 'Woranz', img: 'assets/img/woranz-seguros.png', desc: 'Líderes y especialistas indiscutidos en seguros de caución y garantías para alquiler u obras.', web: 'https://www.woranz.com', tel: '0810-333-9672' },
-        'galicia': { nombre: 'Galicia Seguros', img: 'assets/img/galicia-seguros.png', desc: 'El respaldo de una entidad financiera de primer nivel aplicada a la protección de tus activos.', web: 'https://www.galiciaseguros.com.ar', tel: '0800-555-4254' },
-        'mercantil': { nombre: 'Mercantil Andina', img: 'assets/img/mercantil-andina.png', desc: 'Casi 100 años de experiencia en el mercado argentino. Coberturas flexibles y adaptables a cada necesidad.', web: 'https://www.mercantilandina.com.ar', tel: '0800-888-4488' },
-        'sancristobal': { nombre: 'San Cristóbal Retiro', img: 'assets/img/san-cristobal.png', desc: 'Expertos en planificación financiera a largo plazo y capitalización con rentabilidad garantizada.', web: 'https://www.sancristobal.com.ar', tel: '0810-222-8887' }
+        'federacion': { 
+            nombre: 'Federación Patronal', 
+            img: 'assets/img/federacion-patronal.png', 
+            desc: 'La aseguradora N°1 en situación financiera del país, ofreciendo solidez y una amplia gama de coberturas patrimoniales.', 
+            web: 'https://www.fedpat.com.ar', 
+            appText: 'Portal Autogestión',
+            appLink: 'https://online.fedpat.com.ar/autogestion/ui#/login',
+            wspDoc: '+54 9 221-429-0200',
+            gruas: '+54 9 3512 00-2585 (solo WhatsApp) | 0800 222-0022'
+        },
+        'cooperacion': { 
+            nombre: 'Cooperación Seguros', 
+            img: 'assets/img/cooperacion-seguros.png', 
+            desc: 'Especialistas en seguros patrimoniales con una fuerte presencia y atención personalizada inigualable.', 
+            web: 'https://www.cooperacionseguros.com.ar', 
+            appText: 'Portal Online',
+            appLink: 'https://asegurados.cooperacionseguros.com.ar',
+            playStore: 'https://play.google.com/store/apps/details?id=com.mustmobile.cooperacionseguros',
+            appStore: 'https://apps.apple.com/ar/app/aol-cooperación-seguros/id1059729411',
+            wspDoc: '+54 9 3462 40-6240',
+            gruas: '0800-444-0266 | 3462-437-800'
+        },
+        'triunfo': { 
+            nombre: 'Triunfo Seguros', 
+            img: 'assets/img/triunfo-seguro.png', 
+            desc: 'Compañía destacada por sus precios competitivos y emisión digital inmediata en multiple riesgos.', 
+            web: 'https://triunfoseguros.com', 
+            appText: 'Zona Clientes',
+            appLink: 'https://zonaclientes.triunfonet.com.ar',
+            playStore: 'https://play.google.com/store/apps/details?id=com.apptriunfo',
+            appStore: 'https://play.google.com/store/apps/details?id=com.apptriunfo',
+            wspDoc: '0800-666-8400 | 0810-333-3838',
+            gruas: '0810-333-0302'
+        },
+        'rivadavia': { 
+            nombre: 'Seguros Rivadavia', 
+            img: 'assets/img/seguro-rivadavia.png', 
+            desc: 'Una de las aseguradoras con mayor respaldo y trayectoria del país, enfocada en la protección patrimonial integral.', 
+            web: 'https://www.segurosrivadavia.com', 
+            appText: 'Autogestión',
+            appLink: 'https://autogestion.segurosrivadavia.com',
+            playStore: 'https://play.google.com/store/apps/details?id=com.rivadavia.asegurados_rivadavia',
+            appStore: 'https://apps.apple.com/ar/app/rivadavia-seguros/id6469643651',
+            wspDoc: '+54 9 11 3989-8000',
+            gruas: '0800-666-6789 / 0800-888-2266 | +54 9 11 2808-0012 (solo WhatsApp) | Países limítrofes: +54 351 485-8321 / +54 11 4129-8100'
+        },
+        'woranz': { 
+            nombre: 'Woranz', 
+            img: 'assets/img/woranz-seguros.png', 
+            desc: 'Líderes y especialistas indiscutidos en seguros de caución y garantías para alquiler u obras.', 
+            web: 'https://www.woranz.com', 
+            appText: 'Portal Asegurados',
+            appLink: 'https://asegurados.woranz.com',
+            wspDoc: '0800 266 4240',
+            gruas: ''
+        },
+        'galicia': { 
+            nombre: 'Galicia Seguros', 
+            img: 'assets/img/galicia-seguros.png', 
+            desc: 'El respaldo de una entidad financiera de primer nivel aplicada a la protección de tus activos.', 
+            web: 'https://www.galiciaseguros.com.ar', 
+            appText: 'Autogestión Galicia',
+            appLink: 'https://appgw.galiciaseguros.com.ar/gs-selfmanagement-fe/auth/login/',
+            playStore: 'https://play.google.com/store/apps/details?id=com.sura&hl=en_US',
+            appStore: 'https://apps.apple.com/ar/app/galicia-seguros/id1315068644',
+            wspDoc: '+54 9 11 3254-8281',
+            gruas: '0800-999-76925'
+        },
+        'mercantil': { 
+            nombre: 'Mercantil Andina', 
+            img: 'assets/img/mercantil-andina.png', 
+            desc: 'Casi 100 años de experiencia en el mercado argentino. Coberturas flexibles y adaptables a cada necesidad.', 
+            web: 'https://mercantilandina.com.ar', 
+            appText: 'Asegurados MA',
+            appLink: 'https://asegurados.mercantilandina.com.ar/#/login?returnUrl=%2F',
+            playStore: 'https://play.google.com/store/apps/details?id=com.ma.movil&hl=es_419',
+            appStore: 'https://apps.apple.com/ar/app/ma-móvil/id1055740055',
+            wspDoc: '',
+            gruas: '0800-777-2634 / 011 4335-5792 | Países limítrofes: +54 011 4335-5792'
+        },
+        'sancristobal': { 
+            nombre: 'San Cristóbal Retiro', 
+            img: 'assets/img/san-cristobal.png', 
+            desc: 'Expertos en planificación financiera a largo plazo y capitalización con rentabilidad garantizada.', 
+            web: 'https://www.sancristobalretiro.com.ar', 
+            appText: '',
+            appLink: '',
+            wspDoc: '0341 420 7600 / 0341 420 7673 | +54 9 11 3511-6941',
+            gruas: ''
+        }
     };
 
     const modalCompany = document.getElementById('modalCompany');
@@ -62,7 +144,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p class="company-desc">${data.desc}</p>
                     <div class="company-contact">
                         <p><strong>🌐 Sitio Web:</strong> <a href="${data.web}" target="_blank">${data.web}</a></p>
-                        <p><strong>📞 Atención al Cliente:</strong> <a href="tel:${data.tel.replace(/-/g,'')}">${data.tel}</a></p>
+                        ${data.appLink ? `<p><strong>📱 App / Autogestión:</strong> <a href="${data.appLink}" target="_blank">${data.appText}</a></p>` : ''}
+                        ${data.playStore ? `<p><strong>▶️ Google Play:</strong> <a href="${data.playStore}" target="_blank">Descargar Android</a></p>` : ''}
+                        ${data.appStore ? `<p><strong>🍎 App Store:</strong> <a href="${data.appStore}" target="_blank">Descargar iOS</a></p>` : ''}
+                        ${data.wspDoc ? `<p><strong>📞 Contacto / Docs:</strong> ${data.wspDoc}</p>` : ''}
+                        ${data.gruas ? `<p><strong>🚨 Grúas / Asistencia:</strong> ${data.gruas}</p>` : ''}
                     </div>
                 `;
                 modalCompany.style.display = 'flex';
@@ -73,18 +159,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (closeCompany) closeCompany.addEventListener('click', () => modalCompany.style.display = 'none');
 
     // 3. Formularios Dinámicos Estrictos
-    // ✅ 'form' se declara acá arriba porque más abajo lo usa metodoEnvioRadios
-    // antes de llegar a la sección 4.
     const form = document.getElementById('formCotizacion');
-
     const modalCotizacion = document.getElementById('modalCotizacion');
     const dynamicFields = document.getElementById('dynamic-fields');
     const inputTipoSeguro = document.getElementById('inputTipoSeguro');
 
-    // === NUEVO: convierte el "name" de un campo (ej. "anio_vehiculo") en un
-    // label legible y con tildes correctas (ej. "Año Vehículo"). Antes se
-    // generaba solo con mayúsculas, por lo que "anio" quedaba sin la tilde
-    // de "año". Se usa tanto para el email como para los recordatorios. ===
     const ACENTOS_CAMPOS = {
         anio: 'año',
         anios: 'años',
@@ -109,10 +188,9 @@ document.addEventListener('DOMContentLoaded', () => {
             .join(' ');
     }
 
-    // Bloque base reutilizable
-    const baseFields = `
+    // Bloque sin CUIL (Para Integral de Comercios)
+    const baseFieldsSinCuil = `
         <input type="text" name="nombre_y_apellido" placeholder="Nombre y Apellido completo" required>
-        <input type="text" name="cuit_o_dni" placeholder="CUIT o DNI" required>
         <input type="email" name="correo_electronico" placeholder="Correo Electrónico" required>
         <input type="tel" name="telefono" placeholder="Teléfono / Celular" required>
         <div class="full-width" style="display:flex; align-items:center; gap:10px;">
@@ -122,6 +200,10 @@ document.addEventListener('DOMContentLoaded', () => {
         <input type="text" name="domicilio" placeholder="Domicilio completo" required>
         <input type="text" name="codigo_postal" placeholder="Código Postal" required>
     `;
+
+    // Bloque base estándar (Con CUIL)
+    const cuilField = `<input type="text" name="cuil_o_dni" placeholder="CUIL o DNI" required>`;
+    const baseFields = cuilField + baseFieldsSinCuil;
 
     const pagoField = `
         <select name="forma_de_pago" class="full-width" required>
@@ -133,6 +215,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const formSchemas = {
         'auto': baseFields + pagoField + `
+            <input type="text" name="marca_y_modelo" placeholder="Marca y Modelo del Vehículo" class="full-width" required>
+            <select name="uso_vehiculo" required>
+                <option value="" disabled selected>Uso del Vehículo</option>
+                <option value="Particular">Particular</option>
+                <option value="Comercial">Comercial</option>
+            </select>
             <select name="tiene_gnc" required>
                 <option value="" disabled selected>¿Tiene GNC?</option>
                 <option value="Sí">Sí</option>
@@ -149,6 +237,12 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `,
         'moto': baseFields + pagoField + `
+            <input type="text" name="marca_y_modelo" placeholder="Marca y Modelo del Vehículo" class="full-width" required>
+            <select name="uso_vehiculo" required>
+                <option value="" disabled selected>Uso del Vehículo</option>
+                <option value="Particular">Particular</option>
+                <option value="Comercial">Comercial</option>
+            </select>
             <input type="number" name="anio_vehiculo" placeholder="Año del Vehículo" required>
             <div class="full-width">
                 <label style="font-size:0.85rem; color:var(--text-muted); display:block; margin-bottom:5px;">Subir Tarjeta Verde o Título (Opcional en Mail/Obligatorio en WA):</label>
@@ -160,10 +254,12 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `,
         'hogar': baseFields + `
-            <select name="tipo_material" required>
+            <select name="tipo_material" class="full-width" required>
                 <option value="" disabled selected>Tipo de Construcción</option>
                 <option value="Material">Material (Mampostería)</option>
                 <option value="Mixta">Mixta / Madera</option>
+                <option value="Steel Frame">Estructura de acero (Steel Frame)</option>
+                <option value="Prefabricada">Casas prefabricadas o modulares</option>
             </select>
             <input type="number" name="metros_cuadrados" placeholder="Mts2 Cuadrados (Aprox)" required>
             <select name="condicion_ocupacion" required>
@@ -181,12 +277,16 @@ document.addEventListener('DOMContentLoaded', () => {
             </select>
         `,
         'vida': baseFields + pagoField,
-        'comercio': baseFields + `
+        'comercio': baseFieldsSinCuil + `
             <input type="text" name="actividad_comercial" placeholder="Actividad o Rubro" required>
             <input type="number" name="metros_cuadrados" placeholder="Metros Cuadrados (Aprox)">
             <input type="text" name="domicilio_comercio" placeholder="Domicilio del Comercio" class="full-width" required>
         `,
         'bicicleta': baseFields + `
+            <input type="text" name="marca" placeholder="Marca" required>
+            <input type="text" name="modelo" placeholder="Modelo" required>
+            <input type="text" name="rodado" placeholder="Rodado" required>
+            <input type="number" name="valor_bicicleta" placeholder="Valor de la Bici ($)" required>
             <input type="text" name="ubicacion_riesgo" placeholder="Ubicación de Riesgo (Ciudad/Provincia)" class="full-width" required>
             <div class="full-width">
                 <label style="font-size:0.85rem; color:var(--text-muted); display:block; margin-bottom:5px;">Foto de Factura de Compra (Opcional en Mail):</label>
@@ -208,18 +308,11 @@ document.addEventListener('DOMContentLoaded', () => {
             <input type="email" name="correo_electronico" placeholder="Correo Electrónico" required>
             <input type="tel" name="telefono" placeholder="Teléfono" required>
         `,
-        'viajero': `
-            <input type="text" name="nombre_y_apellido" placeholder="Nombre y Apellido completo" required>
-            <input type="text" name="cuit_o_dni" placeholder="CUIT o DNI" required>
-            <input type="number" name="edad_pasajero" placeholder="Edad del Pasajero" required>
-            <div style="display:flex; align-items:center; gap:10px;">
-                <label style="font-size:0.8rem; color:var(--text-muted);">Nacimiento:</label>
-                <input type="date" name="fecha_nacimiento" required>
-            </div>
-            <input type="text" name="domicilio" placeholder="Domicilio" required>
-            <input type="email" name="correo_electronico" placeholder="Correo Electrónico" required>
+        'viajero': baseFields + `
+            <input type="number" name="edad_pasajero" placeholder="Edad del Pasajero" class="full-width" required>
             <input type="tel" name="telefono_contacto_tercero" placeholder="Tel. de Contacto (Tercero / Emergencia)" class="full-width" required>
-            <input type="text" name="destino_viaje" placeholder="Destino del Viaje (País/Región)" class="full-width" required>
+            <input type="text" name="origen_viaje" placeholder="Origen del Viaje (Ciudad/País)" required>
+            <input type="text" name="destino_viaje" placeholder="Destino del Viaje (País/Región)" required>
             <div style="display:flex; align-items:center; gap:10px;">
                 <label style="font-size:0.8rem; color:var(--text-muted);">Partida:</label>
                 <input type="date" name="fecha_partida" required>
@@ -229,23 +322,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <input type="date" name="fecha_regreso" required>
             </div>
         `,
-        'retiro': `
-            <input type="text" name="nombre_y_apellido" placeholder="Nombre y Apellido" required>
-            <input type="text" name="cuit_o_dni" placeholder="CUIT o DNI" required>
-            <input type="email" name="correo_electronico" placeholder="Correo Electrónico" required>
-            <input type="tel" name="telefono" placeholder="Teléfono" required>
-            <div class="full-width" style="display:flex; align-items:center; gap:10px;">
-                <label style="font-size:0.85rem; color:var(--text-muted); white-space:nowrap;">Fecha Nac:</label>
-                <input type="date" name="fecha_nacimiento" required>
-            </div>
-            <input type="text" name="domicilio" placeholder="Domicilio" required>
-            <input type="text" name="codigo_postal" placeholder="Código Postal" required>
-        `,
-        'praxis': `
-            <input type="text" name="nombre_y_apellido" placeholder="Nombre y Apellido" required>
-            <input type="text" name="cuit_o_dni" placeholder="CUIT o DNI" required>
-            <input type="email" name="correo_electronico" placeholder="Correo Electrónico" required>
-            <input type="tel" name="telefono" placeholder="Teléfono" required>
+        'retiro': baseFields + ``,
+        'praxis': baseFields + `
             <input type="text" name="profesion" placeholder="Profesión / Especialidad" class="full-width" required>
             <input type="text" name="nro_matricula" placeholder="Nro Matrícula" required>
             <input type="text" name="credencial_otorgada_por" placeholder="Credencial otorgada por" required>
@@ -259,6 +337,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <option value="Sí">Sí</option>
                 <option value="No">No</option>
             </select>
+        `,
+        'accidentes': baseFields + `
+            <input type="text" name="profesion_o_actividad" placeholder="Profesión o Actividad Laboral" class="full-width" required>
         `
     };
 
@@ -326,10 +407,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // === NUEVO: sube un archivo directo a R2 usando una URL firmada ===
-    // 1) le pide a la Netlify Function una URL de subida (PUT) y una de
-    //    descarga (GET), ambas firmadas y con expiración.
-    // 2) sube el archivo directo a R2 con fetch PUT (nunca pasa por Netlify).
-    // 3) devuelve la URL de descarga para incluirla en WhatsApp/Email.
     async function uploadFileToR2(file) {
         const signRes = await fetch(UPLOAD_ENDPOINT, {
             method: 'POST',
@@ -361,7 +438,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 4. Interceptor de Envío y Procesamiento (EmailJS DUAL-FORMAT + WhatsApp)
-    // 'form' ya está declarado en la sección 3, no se vuelve a declarar acá.
     const btnSubmit = document.getElementById('btnSubmit');
     const formStatus = document.getElementById('formStatus');
 
@@ -378,9 +454,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const tipoSeguro = originalFormData.get('tipo_seguro');
 
             // === NUEVO: Cloudflare R2 solo se usa si el método es email.
-            // En WhatsApp los inputs de archivo ya están deshabilitados
-            // (applyFileInputsState), por lo que el navegador ni siquiera
-            // los incluye en el FormData: no hace falta filtrarlos acá. ===
             const fileLinks = []; // { label, fileName, url } — solo se llena en email
 
             if (metodoEnvio === 'email') {
@@ -434,10 +507,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (metodoEnvio === 'whatsapp') {
-                // === NUEVO: en WhatsApp no hay links de R2. En su lugar,
-                // se arma un recordatorio con los nombres "amigables" de
-                // cada campo de archivo del formulario actual, para que el
-                // cliente sepa qué adjuntar manualmente en el chat. ===
                 const reminders = getFileReminders();
                 if (reminders.length > 0) {
                     waText += `\n--- ARCHIVOS A ADJUNTAR EN EL CHAT ---\n`;
@@ -457,8 +526,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 resetFormState();
 
             } else {
-                // === NUEVO: en email sí van los links reales de descarga
-                // (ya subidos a R2) dentro de la tabla HTML. ===
                 if (hasFiles) {
                     emailHtmlRows += `
                         <tr>
@@ -474,11 +541,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 }
 
-                // Parámetros formateados para inyectar directamente en el template HTML de EmailJS
                 const templateParams = {
                     tipo_seguro: tipoSeguro,
                     resumen_datos_html: emailHtmlRows,
-                    correo_electronico: originalFormData.get('correo_electronico') // Aseguramos el mapeo para responder directo
+                    correo_electronico: originalFormData.get('correo_electronico') 
                 };
 
                 try {
@@ -516,7 +582,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatMessages = document.getElementById('chatbot-messages');
     let chatInitialized = false;
 
-    // Plantilla armada para Siniestro directo a WA
     const siniestroTemplate = `Hola Ezequiel, quiero reportar un siniestro.
 *MIS DATOS DEL HECHO*
 Fecha del Siniestro: 
@@ -533,6 +598,7 @@ Compañía de Seguro Tercero:
 Daños causados al tercero: 
 *(Adjuntaré foto carnet del tercero si tengo)*`;
 
+    // Actualizado con los nuevos números de Grúas y Asistencia
     const chatTree = {
         inicio: {
             text: "¡Hola! 👋 Soy el asistente automatizado de <b>Ezequiel Baños</b>.<br>Seleccioná la gestión a realizar:",
@@ -551,7 +617,15 @@ Daños causados al tercero:
             ]
         },
         solicitar_grua: {
-            text: "📲 <b>Descargá la app de tu compañía para gestionar tu documentación y servicios de forma rápida.</b><br><br>📞 <b>Teléfonos directos de Asistencia/Grúa:</b><br><br>• <b>Triunfo Seguros:</b> 0810-666-0302 | <a href='https://www.triunfoseguros.com' target='_blank'>Web</a> | Cel: 261 684-2503<br>• <b>Rivadavia Seguros:</b> 0800-666-6789 | <a href='https://www.segurosrivadavia.com' target='_blank'>Web</a> | Cel: 11 3986-1111<br>• <b>Fed. Patronal:</b> 0810-222-5588 | <a href='https://online.fedpat.com.ar/autogestion/ui#/login' target='_blank'>Web</a> | Cel: 221 4290-200<br>• <b>Cooperación:</b> 0800-777-7070 | <a href='https://www.cooperacionseguros.com.ar' target='_blank'>Web</a> | Cel: 3462 31-8900<br>• <b>Mercantil Andina:</b> 0800-888-4488 | <a href='https://www.mercantilandina.com.ar' target='_blank'>Web</a> | Cel: 11 4113-4488",
+            text: "📲 <b>Descargá la app de tu compañía para gestionar tu documentación y servicios de forma rápida.</b><br><br>📞 <b>Teléfonos directos de Asistencia/Grúa:</b><br><br>" +
+                  "• <b>Fed. Patronal:</b> +54 9 3512 00-2585 (solo WA) | 0800 222-0022<br>" +
+                  "• <b>Cooperación:</b> 0800-444-0266 | 3462-437-800<br>" +
+                  "• <b>Galicia:</b> 0800-999-76925<br>" +
+                  "• <b>Mercantil Andina:</b> 0800-777-2634 | 011 4335-5792<br>" +
+                  "• <b>Rivadavia:</b> 0800-666-6789 | 0800-888-2266 | +54 9 11 2808-0012 (solo WA)<br>" +
+                  "• <b>Triunfo:</b> 0810-333-0302<br>" +
+                  "• <b>Woranz:</b> 0800-266-4240<br>" +
+                  "• <b>San Cristóbal:</b> 0341 420 7600 | +54 9 11 3511-6941",
             options: [
                 { label: "⬅️ Entendido, volver al menú", next: "inicio" }
             ]
