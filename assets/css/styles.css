@@ -87,7 +87,7 @@ html { scroll-behavior: smooth; }
 .nosotros-content h2 { color: var(--primary-dark); font-size: 2.5rem; margin-bottom: 25px; }
 .nosotros-content p { font-size: 1.1rem; margin-bottom: 20px; color: var(--text-muted); }
 .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 20px; margin-top: 60px; padding-top: 40px; border-top: 1px solid #e2e8f0; }
-.stat-item h3 { font-size: 3rem; color: var(--accent-teal); margin-bottom: 5px; }
+.stat-item h3 { font-size: 2rem; color: var(--accent-teal); margin-bottom: 5px; }
 .stat-item p { font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
 .seguros h2 { color: var(--primary-dark); font-size: 2.5rem; margin-bottom: 10px; }
