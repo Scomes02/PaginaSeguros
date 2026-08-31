@@ -1,8 +1,0 @@
-Seguro de vida y sepelio
-Marca y modelo en el mismo de la bici y año de la bici por separado
-Compañias que nos respaldan (En todos):
-    contacto/documentacion:
-En el chatBot:
-    Volver a poner la parte de las webs y organizarlo un poco mas
-
-Dejar todo 100% responsive

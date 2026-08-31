@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 0. Configuración de APIs (WhatsApp y EmailJS)
-    const waBase = "https://wa.me/5492616564707";
+    const waBase = "https://wa.me/549000000000"; // Reemplaza con tu número de WhatsApp en formato internacional sin signos ni espacios
 
     // --- REEMPLAZA ESTOS 2 VALORES RESTANTES CON LOS DE TU CUENTA EMAILJS ---
-    const EMAILJS_PUBLIC_KEY = "kOlsNlbfxU9QZD9Xh";
-    const EMAILJS_SERVICE_ID = "service_jyurbyz"; // ID extraído de tu configuración
-    const EMAILJS_TEMPLATE_ID = "template_doiuzfp";
+    const EMAILJS_PUBLIC_KEY = "TuClavePublica"; // Clave pública de tu cuenta EmailJS
+    const EMAILJS_SERVICE_ID = "TuIDDeServicio"; // ID extraído de tu configuración
+    const EMAILJS_TEMPLATE_ID = "TuIDDePlantilla";
 
     // === NUEVO: endpoint de la Netlify Function que firma las URLs de R2 ===
     const UPLOAD_ENDPOINT = '/.netlify/functions/get-upload-url';
@@ -502,7 +502,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 }
 
-                const waMessage = `Hola Ezequiel, ` + waText.replace('Cotización solicitada para', 'solicito cotización para');
+                const waMessage = `Hola Juan, ` + waText.replace('Cotización solicitada para', 'solicito cotización para');
                 const encodedMsg = encodeURIComponent(waMessage);
                 window.open(`${waBase}?text=${encodedMsg}`, '_blank');
 
@@ -569,7 +569,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatMessages = document.getElementById('chatbot-messages');
     let chatInitialized = false;
 
-    const siniestroTemplate = `Hola Ezequiel, quiero reportar un siniestro.
+    const siniestroTemplate = `Hola Juan, quiero reportar un siniestro.
 *MIS DATOS DEL HECHO*
 Fecha del Siniestro: 
 Hora: 
@@ -588,7 +588,7 @@ Daños causados al tercero:
     // Chatbot organizado visualmente y con los links limpios
     const chatTree = {
         inicio: {
-            text: "¡Hola! 👋 Soy el asistente automatizado de <b>Ezequiel Baños</b>.<br>Seleccioná la gestión a realizar:",
+            text: "¡Hola! 👋 Soy el asistente automatizado de <b>Juan Perez</b>.<br>Seleccioná la gestión a realizar:",
             options: [
                 { label: "💳 Consultar Pagos", next: "consultar_pagos" },
                 { label: "🚨 Tuve un siniestro (Choque/Robo)", url: `${waBase}?text=${encodeURIComponent(siniestroTemplate)}` },
@@ -599,7 +599,7 @@ Daños causados al tercero:
         consultar_pagos: {
             text: "Para verificar tus cuotas en sistema, derivamos la consulta al canal seguro.",
             options: [
-                { label: "💬 Consultar por WhatsApp", url: `${waBase}?text=${encodeURIComponent("Hola Ezequiel, quiero verificar si estoy al día con los pagos de mis seguros.")}` },
+                { label: "💬 Consultar por WhatsApp", url: `${waBase}?text=${encodeURIComponent("Hola Juan, quiero verificar si estoy al día con los pagos de mis seguros.")}` },
                 { label: "⬅️ Volver", next: "inicio" }
             ]
         },
