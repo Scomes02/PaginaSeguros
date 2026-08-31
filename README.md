@@ -60,7 +60,8 @@ Asegúrate de crear un template en EmailJS que soporte variables HTML ({{{resume
 ### 4. Despliegue
 Conecta el repositorio a Netlify y el sistema desplegará automáticamente la carpeta raíz y habilitará la Netlify Function ubicada en netlify/functions/get-upload-url.js.
 
-#### 📂 Estructura de Archivos Principal
+### 📂 Estructura de Archivos Principal
+```
 Plaintext
 ├── assets/
 │   ├── css/
@@ -73,13 +74,15 @@ Plaintext
 │       └── get-upload-url.js   # Endpoint Serverless para firma de URLs (S3)
 ├── index.html                  # Landing page principal
 └── README.md                   # Documentación
+```
 
 
-## 👨‍💻 Autor
+
+#### 👨‍💻 Autor
 Desarrollado por Santiago Comes.
 
-GitHub [https://github.com/Scomes02]
+[GitHub](https://github.com/Scomes02])
 
-Perfil en Fiverr [https://es.fiverr.com/sellers/santi_comes]
+[Perfil en Fiverr](https://es.fiverr.com/sellers/santi_comes)
 
 Si deseas utilizar esta plantilla para tu propia agencia o necesitas un desarrollo a medida, no dudes en contactarme a través de mis plataformas profesionales.
