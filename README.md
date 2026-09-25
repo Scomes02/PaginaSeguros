@@ -138,7 +138,7 @@ flowchart LR
 **Santiago Comes** 
 - 💻 GitHub: [Scomes02](https://github.com/Scomes02)
 - 💼 LinkedIn: [Santiago Comes](https://www.linkedin.com/in/santiago-comes)
-- 📄 Fiverr: [Santiago Comes](https://es.fiverr.com/sellers/santi_comes)
+- 📄 Fiverr: [Santiago Comes](https://es.fiverr.com/users/santi_comes/seller_dashboard)
 
 📄 Licencia
 Plantilla y sistema desarrollados para uso comercial de Productores Asesores de Seguros (PAS) y Brokers. Si deseás implementar esta solución para tu propia agencia o necesitás un desarrollo a medida, podés contactarme a través de mis canales profesionales.
