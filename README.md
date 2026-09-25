@@ -1,88 +1,85 @@
-# 🛡️ Insurance Broker Landing Page & Quote System
+<div align="center">
 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)
-![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white)
+# 🛡️ PaginaSeguros
 
-Una solución web completa de alta conversión diseñada específicamente para **Productores Asesores de Seguros (PAS)** y Brokers. Este proyecto no es solo una landing page, sino un sistema de captación de leads (cotizaciones) con enrutamiento dinámico, soporte de archivos adjuntos serverless y una interfaz orientada a la experiencia de usuario (UX).
+### Landing Page & Sistema de Cotización Multiriesgo para Productores Asesores de Seguros (PAS) y Brokers
 
-## 🚀 Características Principales
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/es/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)](https://developer.mozilla.org/es/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/es/docs/Web/JavaScript)
+[![Netlify](https://img.shields.io/badge/Netlify-Functions-00C7B7?style=flat-square&logo=netlify&logoColor=white)](https://www.netlify.com)
+[![Cloudflare R2](https://img.shields.io/badge/Cloudflare_R2-Storage-F38020?style=flat-square&logo=cloudflare&logoColor=white)](https://www.cloudflare.com/developer-platform/r2/)
+[![EmailJS](https://img.shields.io/badge/EmailJS-SDK-FF6C37?style=flat-square)](https://www.emailjs.com)
+[![License](https://img.shields.io/badge/Uso-Comercial%2FPlantilla-lightgrey?style=flat-square)]()
 
-*   **Cotizador Dinámico Multiriesgo:** Formularios en modales que adaptan estrictamente sus campos según el tipo de riesgo seleccionado (Autos, Motos, Hogar, Caución, Vida, ART, Praxis, etc.).
-*   **Enrutamiento Dual de Leads:**
-    *   **Modo WhatsApp:** Genera un mensaje de texto pre-estructurado y redirige al usuario a WhatsApp API, indicándole qué archivos debe adjuntar manualmente en el chat.
-    *   **Modo Email Automático:** Procesa los datos y los envía a la bandeja del Broker utilizando un template HTML corporativo vía **EmailJS**.
-*   **Almacenamiento Serverless de Archivos:** Integración nativa con **Cloudflare R2** (S3-compatible) a través de **Netlify Functions**. Los clientes pueden subir fotos de vehículos, cédulas verdes o facturas sin saturar servidores tradicionales. Las URLs de descarga se adjuntan automáticamente en el correo.
-*   **Asistente Virtual UI (Chatbot):** Un menú flotante interactivo diseñado para brindar soporte instantáneo, derivar siniestros con plantillas pre-armadas y mostrar los contactos de grúas/asistencias de múltiples aseguradoras.
-*   **100% Responsive Design:** CSS moderno utilizando CSS Variables, Flexbox y CSS Grid, optimizado tanto para móviles como para escritorio.
+</div>
 
-## 🏗️ Arquitectura Técnica
+---
 
-El sistema utiliza una arquitectura JAMstack:
-1.  **Frontend:** HTML5 semántico, CSS3 puro (sin frameworks pesados para maximizar la velocidad de carga) y Vanilla JavaScript (ES6+).
-2.  **Backend / API:** 
-    *   `Netlify Functions` (Node.js) para la firma segura de URLs (Pre-signed URLs) que permiten la subida directa de archivos desde el navegador del cliente hacia el bucket de almacenamiento.
-3.  **Storage:** Cloudflare R2.
-4.  **Mailing:** EmailJS Client SDK.
+## 📋 Descripción del proyecto
 
-## ⚙️ Configuración e Instalación Local
+**PaginaSeguros** es una solución web integral de alta conversión diseñada específicamente para **Productores Asesores de Seguros (PAS)** y Brokers. Más que una landing page informativa, funciona como un sistema completo de captación y gestión inicial de leads (cotizaciones) con enrutamiento dinámico, carga de archivos adjuntos bajo arquitectura serverless y una interfaz centrada en la experiencia de usuario (UX).
 
-Para clonar y correr este proyecto localmente o desplegarlo en tu propia cuenta de Netlify:
+El proyecto está construido bajo una arquitectura **JAMstack**, priorizando tiempos de carga instantáneos y eliminando el costo de mantenimiento de servidores tradicionales sin sacrificar funcionalidades avanzadas de backend.
 
-### 1. Clonar el repositorio
-*  git clone [https://github.com/Scomes02/PaginaSeguros.git](https://github.com/Scomes02/PaginaSeguros.git)
-*  cd PaginaSeguros
+## 🎯 El problema que resuelve
 
-### 2. Configurar Variables de Entorno (Netlify)
-*  El proyecto requiere un backend serverless para el manejo de archivos. Debes configurar las siguientes variables de entorno en tu panel de Netlify:
+En la operatoria diaria de un productor o broker de seguros, la captación de clientes suele dispersarse en consultas incompletas por redes sociales o mensajes sin los datos ni la documentación necesaria para cotizar (fotos del vehículo, cédula verde, póliza actual), generando idas y vueltas que enfrían la venta.
 
-*  R2_ACCOUNT_ID: Tu ID de cuenta de Cloudflare.
+**PaginaSeguros** estandariza y automatiza la entrada de consultas dándole al cliente **un flujo guiado según el riesgo que desea asegurar**, recolectando exactamente los datos técnicos y archivos adjuntos requeridos antes de entregar el lead listo para cotizar en el WhatsApp o correo electrónico del asesor.
 
-*  R2_ACCESS_KEY_ID: Tu Access Key de Cloudflare R2.
+## ✨ Características principales
 
-*  R2_SECRET_ACCESS_KEY: Tu Secret Key de Cloudflare R2.
+### 📝 Módulo de Cotización Dinámica Multiriesgo
+- Formularios en ventanas modales que adaptan estrictamente sus campos y validaciones según el ramo seleccionado (**Autos, Motos, Hogar, Caución, Vida, ART, Mala Praxis**, entre otros).
+- Validación de campos en tiempo real del lado del cliente para garantizar solicitudes completas.
 
-*  R2_BUCKET_NAME: El nombre de tu bucket.
+### 🔀 Módulo de Enrutamiento Dual de Leads
+- **Modo WhatsApp:** Genera un mensaje de texto pre-estructurado con todos los datos ingresados y redirige al usuario a la API de WhatsApp, indicándole de forma clara qué documentación adicional debe adjuntar en el chat.
+- **Modo Email Automático:** Procesa la solicitud y la envía directamente a la bandeja de entrada del Broker utilizando una plantilla HTML corporativa mediante **EmailJS**, incluyendo tablas estructuradas y enlaces de descarga directa.
 
-* R2_CUSTOM_DOMAIN (Opcional): Si usas un dominio público para R2.
+### ☁️ Módulo de Almacenamiento Serverless de Archivos
+- Integración nativa con **Cloudflare R2** (compatible con S3) a través de **Netlify Functions**.
+- Subida directa desde el navegador del cliente (fotos de vehículos, cédulas verdes, facturas o pólizas) mediante URLs pre-firmadas (*Pre-signed URLs*), sin saturar servidores tradicionales.
+- Generación e inserción automática de las URLs de descarga dentro del correo enviado al broker.
 
-### 3. Configurar EmailJS
-En el archivo assets/js/app.js, localiza la sección de configuración de APIs y reemplaza los valores con los de tu cuenta de EmailJS:
+### 🤖 Asistente Virtual UI (Chatbot)
+- Menú flotante interactivo diseñado para brindar soporte inmediato las 24 horas.
+- Derivación guiada de siniestros con plantillas pre-armadas.
+- Directorio rápido de contactos de urgencia, grúas y asistencias mecánicas de múltiples compañías aseguradoras.
 
-*  const EMAILJS_PUBLIC_KEY = "TU_PUBLIC_KEY";
-*  const EMAILJS_SERVICE_ID = "TU_SERVICE_ID";
-*  const EMAILJS_TEMPLATE_ID = "TU_TEMPLATE_ID";
+## 🏗️ Arquitectura y stack tecnológico
 
-Asegúrate de crear un template en EmailJS que soporte variables HTML ({{{resumen_datos_html}}}) para recibir la tabla estructurada.
+El sistema implementa una arquitectura **JAMstack** desacoplada, optimizada para velocidad, seguridad y escalabilidad:
 
-### 4. Despliegue
-Conecta el repositorio a Netlify y el sistema desplegará automáticamente la carpeta raíz y habilitará la Netlify Function ubicada en netlify/functions/get-upload-url.js.
+| Capa | Tecnología | Uso |
+|---|---|---|
+| Frontend | **HTML5** + **CSS3** | Maquetación semántica y diseño responsivo puro (CSS Variables, Flexbox y Grid) |
+| Lógica de cliente | **Vanilla JavaScript (ES6+)** | Control de modales dinámicos, validaciones, chatbot y orquestación de APIs |
+| Backend / Serverless | **Netlify Functions (Node.js)** | Generación segura de *Pre-signed URLs* para autorizar subidas de archivos |
+| Almacenamiento | **Cloudflare R2** | Persistencia de objetos en la nube (compatible con API AWS S3) para adjuntos |
+| Servicio de correo | **EmailJS Client SDK** | Envío transaccional de cotizaciones con plantillas HTML corporativas |
+| Control de versiones | **Git** + **GitHub** | Gestión de código fuente y despliegue continuo (CI/CD) con Netlify |
 
-### 📂 Estructura de Archivos Principal
-```
-Plaintext
+### Decisiones de diseño destacadas
+
+- **Cero frameworks pesados en el Frontend:** Uso de HTML5, CSS3 y JavaScript nativo para lograr una puntuación óptima de rendimiento y carga instantánea en dispositivos móviles con conexiones lentas.
+- **Subida directa mediante Pre-signed URLs:** Las credenciales de Cloudflare R2 nunca se exponen en el frontend; la Netlify Function firma una URL temporal y el navegador sube el archivo directamente al bucket.
+- **Formularios polimórficos en un único flujo:** En lugar de crear múltiples páginas por cada tipo de seguro, el motor en JavaScript reconfigura el DOM del modal dinámicamente según el riesgo elegido.
+- **Diseño 100% Responsive:** Uso de variables CSS centralizadas que facilitan la personalización de colores e identidad de marca para cualquier agencia o productor.
+
+## 📁 Estructura del proyecto
+
+```text
+PaginaSeguros/
 ├── assets/
 │   ├── css/
-│   │   └── styles.css          # Estilos globales y responsive
-│   ├── img/                    # Logos de compañías y recursos gráficos
+│   │   └── styles.css          # Estilos globales, variables CSS y diseño responsive
+│   ├── img/                    # Logos de compañías aseguradoras y recursos gráficos
 │   └── js/
-│       └── app.js              # Lógica de UI, modals, Cloudflare R2 y EmailJS
+│       └── app.js              # Lógica de UI, modales dinámicos, Cloudflare R2 y EmailJS
 ├── netlify/
 │   └── functions/
-│       └── get-upload-url.js   # Endpoint Serverless para firma de URLs (S3)
-├── index.html                  # Landing page principal
-└── README.md                   # Documentación
-```
-
-
-
-#### 👨‍💻 Autor
-Desarrollado por Santiago Comes.
-
-[GitHub](https://github.com/Scomes02])
-
-[Perfil en Fiverr](https://es.fiverr.com/sellers/santi_comes)
-
-Si deseas utilizar esta plantilla para tu propia agencia o necesitas un desarrollo a medida, no dudes en contactarme a través de mis plataformas profesionales.
+│       └── get-upload-url.js   # Endpoint Serverless (Node.js) para firma de URLs S3/R2
+├── index.html                  # Landing page principal y estructura de componentes
+└── README.md                   # Documentación técnica del proyecto
