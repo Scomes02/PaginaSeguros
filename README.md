@@ -87,12 +87,6 @@ PaginaSeguros/
 
 #### 👨‍💻 Autor
 
-Desarrollado por Santiago Comes.
-
-
-
-[GitHub](https://github.com/Scomes02])
-
-
-
-[Perfil en Fiverr](https://es.fiverr.com/sellers/santi_comes)
+**Santiago Comes** 
+- 💻 GitHub: [Scomes02](https://github.com/Scomes02)
+- 💼 LinkedIn: [Santiago Comes](https://www.linkedin.com/in/santiago-comes)
