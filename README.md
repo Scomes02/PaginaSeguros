@@ -83,3 +83,16 @@ PaginaSeguros/
 │       └── get-upload-url.js   # Endpoint Serverless (Node.js) para firma de URLs S3/R2
 ├── index.html                  # Landing page principal y estructura de componentes
 └── README.md                   # Documentación técnica del proyecto
+```
+
+#### 👨‍💻 Autor
+
+Desarrollado por Santiago Comes.
+
+
+
+[GitHub](https://github.com/Scomes02])
+
+
+
+[Perfil en Fiverr](https://es.fiverr.com/sellers/santi_comes)
