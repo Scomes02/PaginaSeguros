@@ -84,7 +84,64 @@ PaginaSeguros/
 ├── index.html                  # Landing page principal y estructura de componentes
 └── README.md                   # Documentación técnica del proyecto
 ```
+🚀 Instalación y puesta en marcha
+Requisitos previos
+Cuenta en Netlify (o Netlify CLI para entorno local)
 
+Bucket configurado en Cloudflare R2
+
+Cuenta activa en EmailJS
+
+Node.js 18 o superior (para ejecución de funciones serverless)
+
+Pasos
+Bash
+# 1. Clonar el repositorio
+git clone [https://github.com/Scomes02/PaginaSeguros.git](https://github.com/Scomes02/PaginaSeguros.git)
+cd PaginaSeguros
+
+# 2. Instalar dependencias (si se ejecuta con Netlify CLI localmente)
+npm install
+Configurá las variables de entorno para el almacenamiento serverless en el panel de Netlify (Site configuration > Environment variables) o en tu archivo .env local:
+
+Fragmento de código
+R2_ACCOUNT_ID=tu_id_de_cuenta_cloudflare
+R2_ACCESS_KEY_ID=tu_access_key_id_de_r2
+R2_SECRET_ACCESS_KEY=tu_secret_access_key_de_r2
+R2_BUCKET_NAME=nombre_de_tu_bucket
+R2_CUSTOM_DOMAIN=[https://archivos.tudominio.com](https://archivos.tudominio.com) # Opcional: dominio público para R2
+En el archivo assets/js/app.js, localizá la sección de configuración de APIs y reemplazá las constantes con las credenciales de tu cuenta de EmailJS:
+
+JavaScript
+const EMAILJS_PUBLIC_KEY = "TU_PUBLIC_KEY";
+const EMAILJS_SERVICE_ID = "TU_SERVICE_ID";
+const EMAILJS_TEMPLATE_ID = "TU_TEMPLATE_ID";
+Nota sobre EmailJS: Asegurate de crear un template en tu cuenta de EmailJS que soporte inyección de variables HTML con triple llave ({{{resumen_datos_html}}}) para renderizar correctamente la tabla estructurada con los datos del cliente y los enlaces de los archivos adjuntos.
+
+Bash
+# 3. Levantar el entorno de desarrollo local con Netlify CLI
+netlify dev
+Para pasar a producción, conectá el repositorio de GitHub a Netlify: el sistema desplegará automáticamente la carpeta raíz y habilitará el endpoint serverless ubicado en netlify/functions/get-upload-url.js.
+
+### 🧩 Flujo del sistema
+```mermaid
+flowchart LR
+    A[Cliente selecciona<br/>tipo de seguro] --> B[Completa formulario<br/>dinámico]
+    B --> C{¿Canal de envío<br/>elegido?}
+    C -->|Modo WhatsApp| D[Genera mensaje estructurado<br/>y abre WhatsApp API]
+    C -->|Modo Email| E[Netlify Function genera<br/>Pre-signed URL]
+    E --> F[Sube adjuntos directo<br/>a Cloudflare R2]
+    F --> G[EmailJS envía tabla HTML +<br/>links de descarga al Broker]
+```
+
+### 👤 Autor
+**Santiago Comes** 
+- 💻 GitHub: [Scomes02](https://github.com/Scomes02)
+- 💼 LinkedIn: [Santiago Comes](https://www.linkedin.com/in/santiago-comes)
+- 📄 Fiverr: [Santiago Comes](https://es.fiverr.com/sellers/santi_comes)
+
+📄 Licencia
+Plantilla y sistema desarrollados para uso comercial de Productores Asesores de Seguros (PAS) y Brokers. Si deseás implementar esta solución para tu propia agencia o necesitás un desarrollo a medida, podés contactarme a través de mis canales profesionales.
 #### 👨‍💻 Autor
 
 **Santiago Comes** 
